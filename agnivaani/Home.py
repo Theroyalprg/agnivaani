@@ -282,16 +282,16 @@ with col_i1:
                                line=dict(color="#2ecc71", width=2)))
     fig3.add_trace(go.Scatter(x=pct, y=aqi_reduction, name="Delhi AQI Reduction (µg/m³)",
                                line=dict(color="#8fa8c8", width=2), yaxis="y2"))
-    fig3.update_layout(
-        title="Impact vs. Stubble Diversion Rate",
-        paper_bgcolor="#0d1424", plot_bgcolor="#0d1424",
-        font_color="#8fa8c8", height=300,
-        xaxis=dict(title="Fields Diverted (%)", gridcolor="#1e3352", ticksuffix="%"),
-        yaxis=dict(title="CO₂ Avoided (M t)", gridcolor="#1e3352", titlefont=dict(color="#2ecc71")),
-        yaxis2=dict(title="AQI Reduction", overlaying="y", side="right", titlefont=dict(color="#8fa8c8")),
-        legend=dict(bgcolor="#111b2e", bordercolor="#1e3352", borderwidth=1),
-        margin=dict(l=0, r=0, t=40, b=0),
-    )
+   fig3.update_layout(
+    title="Impact vs. Stubble Diversion Rate",
+    paper_bgcolor="#0d1424", plot_bgcolor="#0d1424",
+    font_color="#8fa8c8", height=300,
+    xaxis=dict(title="Fields Diverted (%)", gridcolor="#1e3352", ticksuffix="%"),
+    yaxis=dict(title="CO₂ Avoided (M t)", gridcolor="#1e3352"),
+    yaxis2=dict(title="AQI Reduction", overlaying="y", side="right"),
+    legend=dict(bgcolor="#111b2e", bordercolor="#1e3352", borderwidth=1),
+    margin=dict(l=0, r=0, t=40, b=0),
+)
     st.plotly_chart(fig3, use_container_width=True)
 
 with col_i2:
