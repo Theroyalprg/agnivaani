@@ -271,17 +271,24 @@ st.markdown('<div class="section-header">Projected Impact at Scale</div>', unsaf
 col_i1, col_i2 = st.columns(2)
 
 with col_i1:
-    # Diversion curve
     pct = list(range(0, 101, 10))
-    co2_saved = [p * 0.179 for p in pct]  # 17.9M tonnes at 100%
-    aqi_reduction = [p * 1.52 for p in pct]  # ~152 µg/m³ at 100%
-    revenue = [p * 840 for p in pct]  # ₹84,000 crore at 100%
+    co2_saved = [p * 0.179 for p in pct]
+    aqi_reduction = [p * 1.52 for p in pct]
 
-  fig3 = go.Figure()
-    fig3.add_trace(go.Scatter(x=pct, y=co2_saved, name="CO2 Avoided (M tonnes)",
-                              line=dict(color="#2ecc71", width=2)))
-    fig3.add_trace(go.Scatter(x=pct, y=aqi_reduction, name="Delhi AQI Reduction",
-                              line=dict(color="#8fa8c8", width=2), yaxis="y2"))
+    fig3 = go.Figure()
+    fig3.add_trace(go.Scatter(
+        x=pct,
+        y=co2_saved,
+        name="CO2 Avoided (M tonnes)",
+        line=dict(color="#2ecc71", width=2)
+    ))
+    fig3.add_trace(go.Scatter(
+        x=pct,
+        y=aqi_reduction,
+        name="Delhi AQI Reduction",
+        line=dict(color="#8fa8c8", width=2),
+        yaxis="y2"
+    ))
     fig3.update_layout(
         title="Impact vs. Stubble Diversion Rate",
         paper_bgcolor="#0d1424",
@@ -295,6 +302,34 @@ with col_i1:
         margin=dict(l=0, r=0, t=40, b=0),
     )
     st.plotly_chart(fig3, use_container_width=True)
+
+with col_i2:
+    districts = ["Ludhiana", "Amritsar", "Patiala", "Sangrur", "Moga", "Bathinda", "Ferozepur"]
+    area_mha = [3.8, 2.9, 3.1, 2.4, 1.8, 2.2, 1.9]
+    revenue_cr = [a * 2.4 * 0.6 * 2400 / 100 for a in area_mha]
+
+    fig4 = go.Figure(go.Bar(
+        x=districts,
+        y=revenue_cr,
+        marker=dict(
+            color=revenue_cr,
+            colorscale=[[0, "#1a3a1a"], [0.5, "#2ecc71"], [1, "#f5a623"]],
+        ),
+        text=[f"Rs.{v:.0f}Cr" for v in revenue_cr],
+        textposition="outside",
+        textfont=dict(color="#8fa8c8", size=10)
+    ))
+    fig4.update_layout(
+        title="Potential Farmer Revenue by District (@ 60% diversion)",
+        paper_bgcolor="#0d1424",
+        plot_bgcolor="#0d1424",
+        font_color="#8fa8c8",
+        height=300,
+        yaxis=dict(title="Revenue (Rs. Crore)", gridcolor="#1e3352"),
+        xaxis=dict(gridcolor="#1e3352"),
+        margin=dict(l=0, r=0, t=40, b=0),
+    )
+    st.plotly_chart(fig4, use_container_width=True)
    
 
 with col_i2:
