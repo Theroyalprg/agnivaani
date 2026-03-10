@@ -2,17 +2,6 @@
 
 A fully working Streamlit dashboard for the Agnivāṇī climate-tech solution targeting stubble burning in the northwestern Indian agricultural belt.
 
-## 🚀 Quick Start (Local)
-
-```bash
-# 1. Install dependencies
-pip install -r requirements.txt
-
-# 2. Run the app
-streamlit run Home.py
-```
-
-The app opens at **http://localhost:8501**
 
 ## 📄 Pages
 
@@ -24,13 +13,6 @@ The app opens at **http://localhost:8501**
 | 💰 Biomass Economics | Arbitrage calculator, plant network, PM-Kisan payment flow |
 | 📞 Voice Call Log | Bhashini VoicERA call transcripts, funnel analytics, AWWER stats |
 
-## ☁️ Deploy on Streamlit Cloud (Free)
-
-1. Push this folder to a GitHub repository
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Connect your GitHub repo
-4. Set **Main file path** to `Home.py`
-5. Click **Deploy** — live in ~2 minutes
 
 ## 🏗️ Project Structure
 
