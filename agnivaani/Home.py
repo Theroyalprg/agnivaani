@@ -217,4 +217,4 @@ with c2:
     st.plotly_chart(fig4, use_container_width=True)
 
 st.divider()
-st.caption("Agnivāṇī v2.0 · Climate-Tech Solution · Northwestern India Agricultural Belt · Data: ISRO VEDAS · Copernicus SLSTR NRT · Google DeepMind NeuralGCM · MeitY Bhashini")
+st.caption("Agnivāṇī by Prakarsh · Climate-Tech Solution · Northwestern India Agricultural Belt · Data: ISRO VEDAS · Copernicus SLSTR NRT · Google DeepMind NeuralGCM · MeitY Bhashini")
